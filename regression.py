@@ -137,4 +137,4 @@ if __name__ == '__main__':
 
     model, mse = estimator(X, Y)
     print(f'Best model: {model.__class__}')
-    print(f'Best test  MSE: {mse}')
+    print(f'Test  MSE: {mse}')
