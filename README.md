@@ -1,10 +1,11 @@
 # ML-Models
-For an exploratory study of various machine learning models. Analysis and precprocessing of data is avoided since this study focuses on *usage* of various sklearn models with default configurations.
+For an exploratory study of various machine learning models. Analysis and precprocessing of data may often be avoided since this study focuses on *usage* of various sklearn models with default configurations.
 
 ## Regression
-Exploring performance of various machine models on the classic California Housing Price Dataset.<br>
+Explores performance of various regression models.<br>
 After importing the `regression.py` module, you can call the function `estimator(X, Y)` and get the best regression model for the dataset `(X, Y)`.<br>
-The parameters `X` is a pandas dataframe of input features and `Y` is a pandas series of the target variable.<br>
+The parameter `X` is a pandas dataframe of input features and `Y` is a pandas series of the target variable.<br>
+Running the `regression.py` module as it is will give the following sample output which uses the classic California Housing Prices Dataset.
 
 ### Sample Output
 
