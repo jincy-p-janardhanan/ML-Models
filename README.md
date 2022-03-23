@@ -15,8 +15,6 @@ The parameter `data` should be a tuple `(X, Y)` where `X` is a pandas dataframe 
 <class 'sklearn.ensemble._forest.RandomForestRegressor'>:
         Trainingprec: 0.03880235652016182
         valprec    : 0.03904502709355855
-C:\ProgramData\Anaconda3\lib\site-packages\sklearn\svm\_base.py:985: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
-  warnings.warn("Liblinear failed to converge, increase "
 <class 'sklearn.svm._classes.LinearSVR'>:
         Trainingprec: 0.450212183429223
         valprec    : 0.4649338474505642
