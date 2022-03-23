@@ -69,8 +69,8 @@ def estimator(data):
         val_mse = metrics.mean_squared_error(Y_val, Y_pred_val)
 
         print(f'{model.__class__}:')
-        print(f'\tTrainingprec: {train_mse}')
-        print(f'\tvalprec    : {val_mse}')
+        print(f'\tTraining MSE: {train_mse}')
+        print(f'\tValidation MSE    : {val_mse}')
 
         plt.subplot(1, 2, 1)
         plt.hist(train_errors, color='blue')
