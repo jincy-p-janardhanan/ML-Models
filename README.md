@@ -5,44 +5,44 @@ The parameters `X` is a pandas dataframe of input features and `Y` is a pandas s
 
 ## Sample Output
 
-![image](https://user-images.githubusercontent.com/51118633/159776518-491bd947-7a03-469f-990e-14ebbb39fac0.png)
+![image](https://user-images.githubusercontent.com/51118633/159784912-aebb2345-38f0-421d-ab52-b035f144b52c.png)
 ```
 <class 'sklearn.linear_model._base.LinearRegression'>:
 	Training MSE	: 0.4415847034707834
-	Validation MSE	: 0.4546705439391979 
+	Validation MSE	: 0.46836770999839755
 
 ```
-![image](https://user-images.githubusercontent.com/51118633/159776627-621e5bb2-6820-459e-8e42-5fece70ba793.png)
+![image](https://user-images.githubusercontent.com/51118633/159785276-360dc152-fe95-45c6-a197-0a016911ab1e.png)
 ```
 <class 'sklearn.ensemble._bagging.BaggingRegressor'>:
 	Training MSE	: 0.0495235228848702
-	Validation MSE	: 0.049521583060808325 
+	Validation MSE	: 0.2809632860237471 
 
 ```
-![image](https://user-images.githubusercontent.com/51118633/159776723-0f85c725-b815-472c-b8b7-ceb60428b2ee.png)
+![image](https://user-images.githubusercontent.com/51118633/159785399-735a9e9f-d5e2-4ae9-9878-b57158a10aa7.png)
 ```
 <class 'sklearn.ensemble._forest.RandomForestRegressor'>:
-	Training MSE	: 0.03866445255277847
-	Validation MSE	: 0.03886070485938917 
+	Training MSE	: 0.03442765202858801
+	Validation MSE	: 0.25679743116303017 
 
 ```
-![image](https://user-images.githubusercontent.com/51118633/159776869-7429b9eb-3b6e-4ea4-886e-a73fc263cdef.png)
+![image](https://user-images.githubusercontent.com/51118633/159785523-449efd12-b391-4016-aead-38e3be120aaf.png)
 ```
 <class 'sklearn.svm._classes.LinearSVR'>:
 	Training MSE	: 2.126105308335331
-	Validation MSE	: 2.127781037646729 
+	Validation MSE	: 2.0886867115616874  
 
 ```
-![image](https://user-images.githubusercontent.com/51118633/159776954-480e1e22-e3f2-4a14-96ef-b775fba900cb.png)
+![image](https://user-images.githubusercontent.com/51118633/159785609-416a68a0-724d-43e2-b53d-1339b6257c2d.png)
 ```
 <class 'sklearn.neighbors._regression.KNeighborsRegressor'>:
 	Training MSE	: 0.2680161881869106
-	Validation MSE	: 0.2737135373102252 
+	Validation MSE	: 0.42012969031690883
 
 ```
-![image](https://user-images.githubusercontent.com/51118633/159777052-49894f17-5e16-4b84-9f16-7c59c9d1cfec.png)
+![image](https://user-images.githubusercontent.com/51118633/159785982-119b2a40-396c-4966-b28e-5fee87ef2ecf.png)
 ```
 Best model: <class 'sklearn.ensemble._forest.RandomForestRegressor'>
-Test  MSE: 0.12870989410482483
+Test  MSE: 0.25317961771776054
 ```
 In the current setting, this output is reproducible when California Housing Prices Dataset and the chosen random seed (10) are used.
