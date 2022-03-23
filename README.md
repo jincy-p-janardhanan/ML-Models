@@ -1,9 +1,13 @@
-# Regression
-Exploring performance of various machine models on the classic California Housing Price Dataset.
-After importing the module, you can call the function `estimator(data)` and get the best regression model for that data.
-The parameters `X` is a pandas dataframe of input features and `Y` is a pandas series of the target variable.
+# ML-Models
+For an exploratory study of various machine learning models. Analysis and precprocessing of data may often be avoided since this study focuses on *usage* of various sklearn models with default configurations.
 
-## Sample Output
+## Regression
+Explores performance of various regression models.<br>
+After importing the `regression.py` module, you can call the function `estimator(X, Y)` and get the best regression model for the dataset `(X, Y)`.<br>
+The parameter `X` is a pandas dataframe of input features and `Y` is a pandas series of the target variable.<br>
+Running the `regression.py` module as it is will give the following sample output which uses the classic California Housing Prices Dataset.
+
+### Sample Output
 
 ![image](https://user-images.githubusercontent.com/51118633/159784912-aebb2345-38f0-421d-ab52-b035f144b52c.png)
 ```
