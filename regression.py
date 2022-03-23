@@ -7,9 +7,11 @@ from sklearn import datasets, linear_model, model_selection, metrics, ensemble, 
 
 def estimator(X, Y):
 
+    seed = 10
+
     # Train, Validation and Test Split
-    X_train, X_val, Y_train, Y_val = model_selection.train_test_split(X, Y,test_size=0.20, random_state=10) 
-    X_val, X_test, Y_val, Y_test = model_selection.train_test_split(X_val, Y_val,test_size=0.50, random_state=10)
+    X_train, X_val, Y_train, Y_val = model_selection.train_test_split(X, Y,test_size=0.20, random_state=seed) 
+    X_val, X_test, Y_val, Y_test = model_selection.train_test_split(X_val, Y_val,test_size=0.50, random_state=seed)
     print(X_train.shape)
     print(X_val.shape)
     print(X_test.shape)
@@ -54,19 +56,19 @@ def estimator(X, Y):
     scores.append(evaluate(lr_model))
 
     # Bagging Regression
-    bag_model = ensemble.BaggingRegressor(random_state=10)
+    bag_model = ensemble.BaggingRegressor(random_state=seed)
     bag_model.fit(X_train, Y_train)
     trained_models.append(bag_model)
     scores.append(evaluate(bag_model))
 
     # Random Forest Regression
-    rf_model = ensemble.RandomForestRegressor(random_state=10)
+    rf_model = ensemble.RandomForestRegressor(random_state=seed)
     rf_model.fit(X_train, Y_train)
     trained_models.append(rf_model)
     scores.append(evaluate(rf_model))
 
     # SVM Regression
-    svm_model = svm.LinearSVR(random_state=10)
+    svm_model = svm.LinearSVR(random_state=seed)
     svm_model.fit(X_train, Y_train)
     trained_models.append(svm_model)
     scores.append(evaluate(svm_model))
