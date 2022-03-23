@@ -43,6 +43,6 @@ The parameter `data` should be a tuple `(X, Y)` where `X` is a pandas dataframe 
 ![image](https://user-images.githubusercontent.com/51118633/159777052-49894f17-5e16-4b84-9f16-7c59c9d1cfec.png)
 ```
 Best model: <class 'sklearn.ensemble._forest.RandomForestRegressor'>
-Best test  MSE: 0.12870989410482483
+Test  MSE: 0.12870989410482483
 ```
 In the current setting, this output is reproducible when California Housing Prices Dataset and the chosen random seed (10) are used.
