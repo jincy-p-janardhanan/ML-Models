@@ -9,8 +9,10 @@ def estimator(X, Y):
 
     # Train, Validation and Test Split
     X_train, X_val, Y_train, Y_val = model_selection.train_test_split(X, Y,test_size=0.20, random_state=10) 
-    X_val, X_test, Y_val, Y_test = model_selection.train_test_split(X, Y,test_size=0.50, random_state=10)
-
+    X_val, X_test, Y_val, Y_test = model_selection.train_test_split(X_val, Y_val,test_size=0.50, random_state=10)
+    print(X_train.shape)
+    print(X_val.shape)
+    print(X_test.shape)
     def evaluate(model):
         # Get predictions by the model
         Y_pred_train = model.predict(X_train)
@@ -58,7 +60,7 @@ def estimator(X, Y):
     scores.append(evaluate(bag_model))
 
     # Random Forest Regression
-    rf_model = ensemble.RandomForestRegressor(n_estimators=25, random_state=10)
+    rf_model = ensemble.RandomForestRegressor(random_state=10)
     rf_model.fit(X_train, Y_train)
     trained_models.append(rf_model)
     scores.append(evaluate(rf_model))
@@ -82,62 +84,13 @@ def estimator(X, Y):
     test_mse = metrics.mean_squared_error(Y_test, Y_pred_test)
 
     # Plot test error
+    plt.subplot(1, 1, 1)
     plt.hist(errors, color='purple')
-    plt.xlabel('Test Error')
+    plt.title('Test Error')
     plt.suptitle(f'{best_model.__class__}')
     plt.show()
 
     return best_model, test_mse
-  
-if __name__ == '__main__':
-
-    (X, Y) = datasets.fetch_california_housing(return_X_y=True, as_frame=True)
-    (m, n) = X.shape
-    cols = X.columns
-
-    print(X.shape, type(X))
-    print(Y.shape, type(Y))
-    print(X.info())
-    print(X.describe())
-    print(X.isna().sum())
-
-    def plot_data():
-        for i in range(n):
-            plt.subplot(1, 2, 1)
-            plt.scatter(X[cols[i]], Y)
-            plt.xlabel(cols[i])
-            plt.ylabel('Price')
-
-            plt.subplot(1, 2, 2)
-            # plt.hist(X[cols[i]])
-            plt.violinplot(X[cols[i]])
-            plt.xlabel(cols[i])
-
-            plt.show()
-
-    # plot original data
-    print('Original Data Plots\n')
-    plot_data()
-
-    # Add new feature
-    X['Loc'] = X['Latitude'] * X['Longitude']
-
-    # Log normalization
-    logcols = ['AveRooms', 'AveBedrms', 'Population', 'AveOccup']
-    X[logcols] = X[logcols].apply(lambda x: np.log(x))
-
-    # Mean normalization and feature scaling
-    normcols = list(set(list(cols)) - set(logcols))
-    X[normcols] = X[normcols].apply(lambda x:((x - x.mean())/x.std()))
-
-    # plot normalized data
-    print('Normalized Data Plots\n')
-    plot_data()
-
-    # Get the best estimator
-    model, mse = estimator(X, Y)
-    print(f'Best model: {model.__class__}')
-    print(f'Test  MSE: {mse}')
 
 if __name__ == '__main__':
 
